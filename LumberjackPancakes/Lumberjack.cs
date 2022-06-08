@@ -11,10 +11,10 @@ namespace LumberjackPancakes
         public string Name { get; private set; }
         private Stack<Flapjack> flapjackStack = new Stack<Flapjack> ();
 
-        public Lumberjack(string name, Stack<Flapjack> flapjackStack)
+        public Lumberjack(string name)
         {
             Name = name;
-            this.flapjackStack = flapjackStack;
+            
         }
 
         private void TakeFlapjack(Flapjack flapjack)
@@ -24,8 +24,11 @@ namespace LumberjackPancakes
 
         private void EatFlapjacks()
         {
-            Console.WriteLine($"{this.Name} je naleśniki.");
-            flapjackStack.Pop ();
+            Console.WriteLine($"{Name} je naleśniki.");
+            while (flapjackStack.Count > 0)
+            {
+                Console.WriteLine($"{Name} je {flapjackStack.Pop().ToString().ToLower()} naleśnik.");
+            }
             
         }
     }

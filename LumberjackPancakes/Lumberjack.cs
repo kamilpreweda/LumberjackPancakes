@@ -17,12 +17,12 @@ namespace LumberjackPancakes
             
         }
 
-        private void TakeFlapjack(Flapjack flapjack)
+        public void TakeFlapjack(Flapjack flapjack)
         {
             flapjackStack.Push (flapjack);
         }
 
-        private void EatFlapjacks()
+        public void EatFlapjacks()
         {
             Console.WriteLine($"{Name} je naleśniki.");
             while (flapjackStack.Count > 0)
